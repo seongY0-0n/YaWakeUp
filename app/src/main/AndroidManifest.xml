@@ -17,7 +17,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity">
+
         </activity>
+        <activity android:name=".Alarm_Activity"/>
+        <activity android:name=".Check_Activity"/>
+        <activity android:name=".Mute_Activity"/>
+        <activity android:name=".Share_Activity"/>
+        <activity android:name=".Set_Activity"/>
+        <activity android:name=".Acc_Activity"/>
     </application>
 
 </manifest>
