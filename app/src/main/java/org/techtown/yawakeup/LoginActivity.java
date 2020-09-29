@@ -18,5 +18,10 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+    public void onSignClicked(View view){
+        Intent intent = new Intent(this, SignupActivity.class);
+        startActivity(intent);
+        finish();
+    }
 
 }
