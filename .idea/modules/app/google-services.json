@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "159670937633",
+    "firebase_url": "https://yawakeup-b6442.firebaseio.com",
+    "project_id": "yawakeup-b6442",
+    "storage_bucket": "yawakeup-b6442.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:159670937633:android:abccab66d5c03a982c1b60",
+        "android_client_info": {
+          "package_name": "org.techtown.yawakeup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "159670937633-r6jinbku6j8ldsav23imuuivrtgjqgm7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.techtown.yawakeup",
+            "certificate_hash": "36e0eb376368388e2eb8d388a0e28d19dc08c4fd"
+          }
+        },
+        {
+          "client_id": "159670937633-7l42oebkpu34ok4dh8epv48ejop6vucb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjkYg_mS-mZpjOTFlGA90u0mNmlAnJvQA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "159670937633-7l42oebkpu34ok4dh8epv48ejop6vucb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
