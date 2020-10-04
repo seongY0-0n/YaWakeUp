@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "159670937633-v69d7no7dj3gu27fuj5umcloumd3p8lm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.techtown.yawakeup",
+            "certificate_hash": "1c5c61d2df5805e518fd6264387f61fa4d3b3533"
+          }
+        },
+        {
           "client_id": "159670937633-r6jinbku6j8ldsav23imuuivrtgjqgm7.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
