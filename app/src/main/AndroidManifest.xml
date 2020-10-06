@@ -29,7 +29,8 @@
         <activity android:name=".Set_Activity" />
         <activity android:name=".Acc_Activity" />
         <activity android:name=".BasicAlarm_Activity"/>
-        <activity android:name=".Test_Activity"/>
+        <activity android:name=".MathAlarm_Activity"/>
+        <activity android:name=".ShakeAlarm_Activity"/>
         <receiver android:name=".Alarm_Receiver"/>
 
         <service
