@@ -1,4 +1,4 @@
-package org.techtown.yawakeup;
+package org.techtown.yawakeup.alarm;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -6,13 +6,14 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.IBinder;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
+
+import org.techtown.yawakeup.R;
 
 
 public class Alarm_Service extends Service {
@@ -45,10 +46,11 @@ public class Alarm_Service extends Service {
         //알림창에 알림
         NotificationCompat.Builder builder  = new NotificationCompat.Builder(this,"first");
         builder.setSmallIcon(R.mipmap.ic_launcher_round);
-        builder.setContentTitle("알람 재생중");
-        builder.setContentText("일어나!");
         builder.setContentIntent(pintent)
-                .setAutoCancel(false);
+                .setContentTitle("알람 재생중")
+                .setContentText("일어나!")
+                .setTimeoutAfter(50000)
+                .setAutoCancel(true);
 
         if(Build.VERSION.SDK_INT>= android.os.Build.VERSION_CODES.O){
             NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
@@ -61,5 +63,10 @@ public class Alarm_Service extends Service {
         return super.onStartCommand(intent, flags, startId);
     }
 
-
+    @Override
+    public void onDestroy() {
+        Log.e("TAG", "리시버");
+        stopForeground(true);
+        super.onDestroy();
+    }
 }

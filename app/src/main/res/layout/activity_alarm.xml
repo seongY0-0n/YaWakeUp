@@ -1,35 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/black"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/black">
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="알람방"
-        android:textColor="@color/white"
-        android:textSize="50sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.045" />
+        tools:layout_editor_absoluteX="8dp">
 
-    <Button
-        android:id="@+id/button8"
-        android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/searchText"
+            android:layout_width="270dp"
+            android:layout_height="50dp"
+            android:hint="검색"
+            android:outlineAmbientShadowColor="#FFFEFE"
+            android:textColor="@color/white"
+            android:textColorHint="#FFFFFF" />
+
+        <ImageView
+            android:id="@+id/searchBtn"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:background="#FFFFFF"
+            android:clickable="true"
+            android:padding="8dp"
+            android:src="@drawable/ic_search_white" />
+
+        <ImageView
+            android:id="@+id/postBtn"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="#FFFCFC"
+            android:clickable="true"
+            android:padding="8dp"
+            android:src="@drawable/ic_write_white" />
+
+
+    </LinearLayout>
+
+    <!-- A RecyclerView with some commonly used attributes -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycelView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="알람설정 test"
-        android:onClick="setAlarm"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_margin="8dp"
+        android:background="#FFFFFF"
+        android:outlineAmbientShadowColor="@color/white"
+        android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:reverseLayout="true"
+        app:stackFromEnd="true"
+        tools:layout_editor_absoluteX="0dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
