@@ -1,10 +1,8 @@
-package org.techtown.yawakeup;
+package org.techtown.yawakeup.alarm;
 
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
-import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -12,11 +10,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.text.MessageFormat;
+import org.techtown.yawakeup.R;
+
 import java.util.Calendar;
 
 public class MathAlarm_Activity extends AppCompatActivity {
@@ -99,6 +96,10 @@ public class MathAlarm_Activity extends AppCompatActivity {
                     mediaPlayer.stop();
                     mediaPlayer.release();
                     flag = false;
+                    SharedPreferences sp = getSharedPreferences("AlarmStatus",MODE_PRIVATE);
+                    SharedPreferences.Editor edit = sp.edit();
+                    edit.putInt("알람 설정 상태", 0); // 1 알람 설정, 0 알람 없음
+                    edit.commit();
                     finish();
                 } else {
                     Toast.makeText(MathAlarm_Activity.this, "아직 잠이 덜깼네요^^", Toast.LENGTH_SHORT).show();

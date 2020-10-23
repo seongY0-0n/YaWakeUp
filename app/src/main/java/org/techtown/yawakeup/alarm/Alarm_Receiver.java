@@ -1,4 +1,4 @@
-package org.techtown.yawakeup;
+package org.techtown.yawakeup.alarm;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -16,7 +16,7 @@ public class Alarm_Receiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         if(intent.getAction().equals(ACTION_RESTART_SERVICE)){
-            Log.e("TAG", "fㅣ시");
+            Log.e("TAG", "리시버");
             Intent in =new Intent(context, Alarm_Service.class);
             if(Build.VERSION.SDK_INT>= android.os.Build.VERSION_CODES.O){
                 context.startForegroundService(in);

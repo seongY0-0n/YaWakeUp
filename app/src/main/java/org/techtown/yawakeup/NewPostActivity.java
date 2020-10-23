@@ -2,7 +2,9 @@ package org.techtown.yawakeup;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -130,6 +132,11 @@ public class NewPostActivity extends AppCompatActivity implements View.OnClickLi
         String contents = EditText_contents.getText().toString();
 
         writeNewPost("1", title, dateString, timeString, place, count, contents);
+
+        SharedPreferences alarmSp = this.getSharedPreferences("AlarmStatus", Context.MODE_PRIVATE);
+        SharedPreferences.Editor edit = alarmSp.edit();
+        edit.putInt("알람 설정 상태", 1); // 1 알람 설정, 0 알람 없음
+        edit.commit();
 
         startActivity(new Intent(this, Share_Activity.class));
 
