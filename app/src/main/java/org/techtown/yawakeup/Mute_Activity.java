@@ -43,11 +43,11 @@ public class Mute_Activity extends AppCompatActivity {
     private String str_Result;
     private int randomNum;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mute);
-
 
         mEditTextInput = findViewById(R.id.edit_text_input);
         mTextViewCountDown = findViewById(R.id.text_view_countdown);
