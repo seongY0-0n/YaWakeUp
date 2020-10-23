@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="15dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/room_title_et"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="15dp"
+            android:background="@null"
+            android:hint="제목"
+            android:privateImeOptions="defaultInputmode=korean"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/room_save_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_blue"
+            android:text="완료" />
+
+    </LinearLayout>
+
+    <!-- 구분선-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="15dp"
+        android:background="@color/black" />
+
+    <!--날짜 작성-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/room_date_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="날짜 : 2020년 10월 11일"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/room_date_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="날짜 선택" />
+
+
+    </LinearLayout>
+
+    <!--시간 작성-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/room_time_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="시간 : 10시 11분"
+            android:textSize="20sp" />
+
+
+        <Button
+            android:id="@+id/room_time_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="시간 선택" />
+
+    </LinearLayout>
+
+
+    <!--모집인원 작성-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="모집인원 : "
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/room_count_et"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <!--내용 작성-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="내용 : "
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/room_contents_et"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@null"
+            android:hint="여기를 눌러서 내용을 작성할 수 있습니다."
+            android:privateImeOptions="defaultInputmode=korean"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
