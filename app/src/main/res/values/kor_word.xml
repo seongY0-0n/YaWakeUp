@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="kor_word">
+        <item>"이상한, 기묘한, 이상 야릇한"</item>
+        <item>"훌륭한, 멋진"</item>
+        <item>"지속되다, 계속하다"</item>
+        <item>"위반하다, 어기다, 침범하다"</item>
+        <item>"떼, 무리"</item>
+        <item>"~에 속하다"</item>
+        <item>"연결하다, 연관시키다"</item>
+        <item>"(감정, 온도, 정도 등이) 강렬한, 심한"</item>
+        <item>"꾸벅꾸벅 졸다, 선잠을 자다"</item>
+        <item>"(숨겨져 있던 것을) 보여주다, 나타내다"</item>
+        <item>"섬기다, 숭배하다"</item>
+        <item>"방해하다, 훼방하다, 간섭하다"</item>
+        <item>"애정, 사랑, 집착, 전념"</item>
+        <item>"소유지, 재산, 부동산"</item>
+        <item>"아주 중유한, 필수적인"</item>
+        <item>"기원, 시작, 출처, 출신"</item>
+        <item>"추상적인, 이론적인"</item>
+        <item>"나누다, 쪼개다"</item>
+        <item>"기본적인, 기초가 되는"</item>
+        <item>"무덤, 묘지"</item>
+        <item>"무능한, 비효율적인"</item>
+    </string-array>
+</resources>
