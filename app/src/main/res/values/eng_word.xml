@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="eng_word">
+        <item>"odd"</item>
+        <item>"splendid"</item>
+        <item>"last"</item>
+        <item>"violate"</item>
+        <item>"flock"</item>
+        <item>"belong to"</item>
+        <item>"link"</item>
+        <item>"intense"</item>
+        <item>"doze"</item>
+        <item>"reveal"</item>
+        <item>"worship"</item>
+        <item>"interfere with"</item>
+        <item>"affection"</item>
+        <item>"estate"</item>
+        <item>"essential"</item>
+        <item>"origin"</item>
+        <item>"abstract"</item>
+        <item>"split"</item>
+        <item>"fundamental"</item>
+        <item>"grave"</item>
+        <item>"inefficient"</item>
+    </string-array>
+</resources>

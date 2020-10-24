@@ -1,5 +1,6 @@
 package org.techtown.yawakeup.alarm;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -15,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import org.techtown.yawakeup.R;
 
 import java.util.Calendar;
+import java.util.Random;
 
 public class MathAlarm_Activity extends AppCompatActivity {
     java.util.Calendar calendar;
@@ -101,6 +103,14 @@ public class MathAlarm_Activity extends AppCompatActivity {
                     edit.putInt("알람 설정 상태", 0); // 1 알람 설정, 0 알람 없음
                     edit.commit();
                     finish();
+                    int type = new Random().nextInt(2);
+                    if(type == 0) {
+                        Intent intent = new Intent(MathAlarm_Activity.this, Vocabulary.class);
+                        startActivity(intent);
+                    } else {
+                        Intent intent = new Intent(MathAlarm_Activity.this, Quotation.class);
+                        startActivity(intent);
+                    }
                 } else {
                     Toast.makeText(MathAlarm_Activity.this, "아직 잠이 덜깼네요^^", Toast.LENGTH_SHORT).show();
                 }
