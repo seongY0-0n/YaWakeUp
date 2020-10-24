@@ -6,6 +6,7 @@ import android.app.PendingIntent;
 import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -140,6 +141,10 @@ public class NewRoomActivity extends AppCompatActivity implements View.OnClickLi
 
         writeNewRoom("1", title, dateString, timeString, count, contents);
         setAlarm(); // 방 만듬과 동시에 알람 설정
+        SharedPreferences alarmSp = this.getSharedPreferences("AlarmStatus", Context.MODE_PRIVATE);
+        SharedPreferences.Editor edit = alarmSp.edit();
+        edit.putInt("알람 설정 상태", 1); // 1 알람 설정, 0 알람 없음
+        edit.commit();
         startActivity(new Intent(this, Alarm_Activity.class));
         finish();
     }
