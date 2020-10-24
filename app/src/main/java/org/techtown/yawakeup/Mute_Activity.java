@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ActivityNotFoundException;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -133,9 +135,11 @@ public class Mute_Activity extends AppCompatActivity {
                 mTimerRunning = false;
                 updateWatchInterface();
                 if(str_Result.equals("랜덤 동영상")){
+                    setMute();
                     startYoutube(randUrl);
                 }
                 else if(str_Result.equals("사용자 설정")) {
+                    setMute();
                     startYoutube(userUrl);
                 }
             }
@@ -231,6 +235,11 @@ public class Mute_Activity extends AppCompatActivity {
                 startTimer();
             }
         }
+    }
+
+    public void setMute() {
+        AudioManager mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 0, 0);
     }
 
     private void startYoutube(String youtubeLink) {
