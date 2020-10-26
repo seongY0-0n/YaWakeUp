@@ -76,16 +76,11 @@ public class Alarm_Activity extends Activity implements View.OnClickListener{
                         intent.putExtra("time", currentRoom.getTime());
                         intent.putExtra("count", currentRoom.getCount());
                         intent.putExtra("contents", currentRoom.getContents());
-
                         startActivity(intent);
 
-
-
                     }
-
                     return true;
                 }
-
                 return false;
             }
 
@@ -152,12 +147,10 @@ public class Alarm_Activity extends Activity implements View.OnClickListener{
     public void onItemClick(View view, int position){
 
     }
- /*   public void setAlarm(View view){
-        //버튼 누르면 액티비티 전환
-        Intent intent = new Intent(this, BasicAlarm_Activity.class);
-        startActivity(intent);
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
-*/
-
-
 }

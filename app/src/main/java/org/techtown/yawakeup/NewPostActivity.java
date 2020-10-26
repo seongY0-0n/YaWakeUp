@@ -139,6 +139,7 @@ public class NewPostActivity extends AppCompatActivity implements View.OnClickLi
         edit.commit();
 
         startActivity(new Intent(this, Share_Activity.class));
+        finish();
 
     }
 
