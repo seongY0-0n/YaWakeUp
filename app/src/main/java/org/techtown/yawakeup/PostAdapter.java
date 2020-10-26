@@ -30,7 +30,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         holder.title.setText(data.getTitle());
         holder.time.setText("시간 : " + data.getTime());
         holder.place.setText("장소 : " + data.getPlace());
-        holder.count.setText("1/" + data.getCount());
+        holder.count.setText(data.getDocumentId() + "/" + data.getCount());
     }
 
     public int getItemCount(){

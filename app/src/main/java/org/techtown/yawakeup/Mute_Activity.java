@@ -3,8 +3,11 @@ package org.techtown.yawakeup;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ActivityNotFoundException;
+
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -17,6 +20,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Random;
 import java.util.Locale;
 
 
@@ -39,6 +43,8 @@ public class Mute_Activity extends AppCompatActivity {
     private  String randUrl;
     private String userUrl;
     private String str_Result;
+    private int randomNum;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,16 +60,24 @@ public class Mute_Activity extends AppCompatActivity {
         rand_radioButton = findViewById(R.id.rand_radioButton);
         user_radioButton = findViewById(R.id.user_radioButton);
         final EditText setUrl = findViewById(R.id.setUrl);
+        Random mRandom = new Random();
+        randomNum = mRandom.nextInt(3);
 
         select_Video_Group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 if(i == R.id.rand_radioButton) {
-                    randUrl = "https://www.youtube.com/watch?v=LhoAIgP2ua4";
+                    if(randomNum == 0) {
+                        randUrl = "https://www.youtube.com/watch?v=10QkOikYI68";
+                    }else if(randomNum == 1) {
+                        randUrl = "https://www.youtube.com/watch?v=gdZLi9oWNZg";
+                    }else if(randomNum == 2) {
+                        randUrl = "https://www.youtube.com/watch?v=Y-PzaCfTLVc&t=1s";
+                    }
                     str_Result = rand_radioButton.getText().toString();
                 }
                 else if(i == R.id.user_radioButton) {
-                    userUrl = setUrl.getText().toString();
+                        userUrl = setUrl.getText().toString();
                     str_Result = user_radioButton.getText().toString();
                 }
             }
@@ -121,9 +135,11 @@ public class Mute_Activity extends AppCompatActivity {
                 mTimerRunning = false;
                 updateWatchInterface();
                 if(str_Result.equals("랜덤 동영상")){
+                    setMute();
                     startYoutube(randUrl);
                 }
                 else if(str_Result.equals("사용자 설정")) {
+                    setMute();
                     startYoutube(userUrl);
                 }
             }
@@ -219,6 +235,11 @@ public class Mute_Activity extends AppCompatActivity {
                 startTimer();
             }
         }
+    }
+
+    public void setMute() {
+        AudioManager mAudioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        mAudioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 0, 0);
     }
 
     private void startYoutube(String youtubeLink) {
