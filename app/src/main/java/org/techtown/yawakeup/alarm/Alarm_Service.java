@@ -33,13 +33,8 @@ public class Alarm_Service extends Service {
         //알람 해제 방법 불러오기
         SharedPreferences sp = getSharedPreferences("AlarmCancelMode",MODE_PRIVATE);
         cancelMode= sp.getInt("알람해제방법", 0);
-        Intent alarmIntent;
-        if(cancelMode==1){
-            //수학 문제 풀기로
-            alarmIntent = new Intent(getApplicationContext(), MathAlarm_Activity.class);
-        } else{
-            alarmIntent = new Intent(getApplicationContext(), ShakeAlarm_Activity.class);
-        }
+        Intent alarmIntent = new Intent(getApplicationContext(), MathAlarm_Activity.class);
+
 
         PendingIntent pintent= PendingIntent.getActivity(getApplicationContext(),0, alarmIntent,0);
 

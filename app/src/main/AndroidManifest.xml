@@ -34,9 +34,7 @@
         <activity android:name=".Share_Activity" />
         <activity android:name=".Set_Activity" />
         <activity android:name=".Acc_Activity" />
-        <activity android:name=".alarm.BasicAlarm_Activity" />
         <activity android:name=".alarm.MathAlarm_Activity" />
-        <activity android:name=".alarm.ShakeAlarm_Activity" />
         <activity android:name=".NewPostActivity" />
         <activity android:name=".PostViewActivity" />
         <activity android:name=".alarm.NewRoomActivity" />

@@ -178,8 +178,6 @@ public class NewRoomActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     void setAlarm(){
-
-
         Calendar alarmCalendar= Calendar.getInstance();
         alarmCalendar.setTimeInMillis(System.currentTimeMillis());
         alarmCalendar.set(Calendar.HOUR_OF_DAY,alarmHour);

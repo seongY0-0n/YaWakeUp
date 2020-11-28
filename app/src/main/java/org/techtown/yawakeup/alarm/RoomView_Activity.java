@@ -188,7 +188,6 @@ public class RoomView_Activity extends AppCompatActivity implements View.OnClick
         alarmCalendar.set(Calendar.SECOND,0);
         Toast.makeText(RoomView_Activity.this, "알람이" + alarmHour + "시" + alarmMinute + "분 에 설정 됐습니다.",Toast.LENGTH_SHORT).show();
         //timePickerDialog 에서 설정한 시간을 알림으로 설정
-        Log.e("TAG", "Still yet");
         if(alarmCalendar.before(Calendar.getInstance())) alarmCalendar.add(Calendar.DATE,1);
         //알람 시간이 현재시간보다 느 때 하루 뒤로 맞춤
         Intent alarmIntent = new Intent(getApplicationContext(),Alarm_Receiver.class);
