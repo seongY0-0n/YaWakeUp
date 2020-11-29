@@ -17,7 +17,7 @@
         android:roundIcon="@mipmap/ic_main_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".alarm.IntentWeather"></activity>
+        <activity android:name=".alarm.IntentWeather"/>
         <activity android:name=".alarm.Quotation" />
         <activity android:name=".alarm.Vocabulary" />
         <activity android:name=".SignupActivity" />
