@@ -23,6 +23,8 @@ public class Alarm_Receiver extends BroadcastReceiver {
             } else {
                 context.startService(in);
             }
+        }else{
+            return;
         }
     }
 }

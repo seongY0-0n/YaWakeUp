@@ -166,13 +166,13 @@ public class NewRoomActivity extends AppCompatActivity implements View.OnClickLi
         mDatabase.updateChildren(childUpdates).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                Toast.makeText(NewRoomActivity.this, "글 작성 완료.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(NewRoomActivity.this, "방 생성 완료.", Toast.LENGTH_SHORT).show();
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
                 // Write failed
-                Toast.makeText(NewRoomActivity.this, "글 작성 실패. 다시 시도해주세요", Toast.LENGTH_SHORT).show();
+                Toast.makeText(NewRoomActivity.this, "방 생성 실패. 다시 시도해주세요", Toast.LENGTH_SHORT).show();
             }
         });
     }

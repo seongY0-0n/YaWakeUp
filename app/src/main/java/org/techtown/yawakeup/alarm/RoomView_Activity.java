@@ -82,7 +82,7 @@ public class RoomView_Activity extends AppCompatActivity implements View.OnClick
         switch (id) {
             case R.id.room_edit_fad:
                 anim();
-                Toast.makeText(this, "Floating Action Button", Toast.LENGTH_SHORT).show();
+               // Toast.makeText(this, "Floating Action Button", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.room_modify_fad:
                 anim();
@@ -90,7 +90,7 @@ public class RoomView_Activity extends AppCompatActivity implements View.OnClick
                    setAlarm();
                     SharedPreferences.Editor edit = sp.edit();
                     edit.putInt("알람 설정 상태", 1); // 1 알람 설정, 0 알람 없음
-                    edit.commit();
+                     edit.apply();
                    Toast.makeText(this, "알람방 참여 완료! 알람이 정해진 시간에 맞춰졌습니다.", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(this, "이미 알람 방에 참여되어 있습니다.", Toast.LENGTH_SHORT).show();
@@ -99,15 +99,17 @@ public class RoomView_Activity extends AppCompatActivity implements View.OnClick
             case R.id.room_delete_fad:
                 anim();
                 if(alarmStatus == 0 ){
+                    Toast.makeText(this, "알람 방에 참여되어 있지 않습니다.", Toast.LENGTH_SHORT).show();
                     break;
                 } else if(alarmStatus == 1){
                     SharedPreferences.Editor edit = sp.edit();
                     edit.putInt("알람 설정 상태", 0); // 1 알람 설정, 0 알람 없음
-                    edit.commit();
-                   // cancelAlarm();
+                    Toast.makeText(this, "알람방 나오기 완료! 알람이 삭제되었습니다.", Toast.LENGTH_SHORT).show();
+                    edit.apply();
+                    cancelAlarm();
                 }
 
-                Toast.makeText(this, "delete", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this, "delete", Toast.LENGTH_SHORT).show();
                 break;
         }
     }
@@ -178,9 +180,6 @@ public class RoomView_Activity extends AppCompatActivity implements View.OnClick
         String time = intent.getStringExtra("time");
         int alarmHour = Integer.parseInt(time.substring(0,2));
         int alarmMinute = Integer.parseInt(time.substring(3,5));
-
-
-
         alarmCalendar= Calendar.getInstance();
         alarmCalendar.setTimeInMillis(System.currentTimeMillis());
         alarmCalendar.set(Calendar.HOUR_OF_DAY,alarmHour);
@@ -196,15 +195,22 @@ public class RoomView_Activity extends AppCompatActivity implements View.OnClick
         PendingIntent alarmCallPendingIntent = PendingIntent.getBroadcast(RoomView_Activity.this,0,alarmIntent,PendingIntent.FLAG_UPDATE_CURRENT);
 
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            Log.e("TAG", "위에");
+            //Log.e("TAG", "위에");
             alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, alarmCalendar.getTimeInMillis(), alarmCallPendingIntent);
         }else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
-            Log.e("TAG", "아래거");
+           // Log.e("TAG", "아래거");
             alarmManager.setExact(AlarmManager.RTC_WAKEUP, alarmCalendar.getTimeInMillis(),alarmCallPendingIntent);
         }// 알람 설정
 
     }
-
+    void cancelAlarm(){
+        AlarmManager alarmManager= (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+        Intent alarmIntent = new Intent(getApplicationContext(),Alarm_Receiver.class);
+        alarmIntent.setAction(Alarm_Receiver.ACTION_RESTART_SERVICE);
+        PendingIntent alarmCallPendingIntent = PendingIntent.getBroadcast(RoomView_Activity.this,0,alarmIntent,0);
+        alarmManager.cancel(alarmCallPendingIntent);
+        alarmCallPendingIntent.cancel();
+    }
 
 
 }

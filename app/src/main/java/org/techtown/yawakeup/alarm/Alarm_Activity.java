@@ -84,6 +84,7 @@ public class Alarm_Activity extends Activity implements View.OnClickListener{
                 return false;
             }
 
+
             @Override
             public void onTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
 
@@ -111,6 +112,7 @@ public class Alarm_Activity extends Activity implements View.OnClickListener{
                     mDatas.clear();
                     for (DataSnapshot snap : snapshot.getChildren()) {
                         Map<String, Object> shot = (Map) snap.getValue();
+                        shot.get("key");
                         String documentId = String.valueOf(shot.get("documentId"));
                         String title = String.valueOf(shot.get("title"));
                         String date = String.valueOf(shot.get("date"));
