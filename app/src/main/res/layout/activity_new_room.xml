@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="15dp"
+    android:background="@color/black"
     android:orientation="vertical">
 
     <LinearLayout
@@ -17,6 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginRight="15dp"
+            android:textColor="@color/white"
             android:background="@null"
             android:hint="제목"
             android:privateImeOptions="defaultInputmode=korean"
@@ -50,6 +51,7 @@
         <TextView
             android:id="@+id/room_date_tv"
             android:layout_width="wrap_content"
+            android:textColor="@color/white"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="날짜 : 2020년 10월 11일"
@@ -76,6 +78,7 @@
             android:id="@+id/room_time_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             android:layout_weight="1"
             android:text="시간 : 10시 11분"
             android:textSize="20sp" />
@@ -99,6 +102,7 @@
 
         <TextView
             android:layout_width="wrap_content"
+            android:textColor="@color/white"
             android:layout_height="wrap_content"
             android:text="모집인원 : "
             android:textSize="20sp" />
@@ -106,6 +110,7 @@
         <EditText
             android:id="@+id/room_count_et"
             android:layout_width="70dp"
+            android:textColor="@color/white"
             android:layout_height="wrap_content"
             android:gravity="end"
             android:textSize="20sp" />
@@ -123,6 +128,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"
+            android:textColor="@color/white"
             android:text="내용 : "
             android:textSize="20sp" />
 
@@ -132,6 +138,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:background="@null"
+            android:textColor="@color/white"
             android:hint="여기를 눌러서 내용을 작성할 수 있습니다."
             android:privateImeOptions="defaultInputmode=korean"
             android:textSize="17sp" />

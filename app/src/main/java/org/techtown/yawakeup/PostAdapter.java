@@ -29,8 +29,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         Post data = datas.get(position);
         holder.title.setText(data.getTitle());
         holder.time.setText("시간 : " + data.getTime());
-        holder.place.setText("장소 : " + data.getPlace());
-        holder.count.setText(data.getDocumentId() + "/" + data.getCount());
+       // holder.place.setText("장소 : " + data.getPlace());
+       // holder.count.setText(data.getDocumentId() + "/" + data.getCount());
     }
 
     public int getItemCount(){
@@ -40,16 +40,16 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
     class PostViewHolder extends RecyclerView.ViewHolder{
         private TextView title;
         private TextView time;
-        private TextView place;
-        private TextView count;
+       // private TextView place;
+       // private TextView count;
 
         public PostViewHolder(@NonNull View itemView) {
             super(itemView);
 
             title = itemView.findViewById(R.id.item_post_title);
             time = itemView.findViewById(R.id.item_post_time);
-            place = itemView.findViewById(R.id.item_post_place);
-            count = itemView.findViewById(R.id.item_post_count);
+          //  place = itemView.findViewById(R.id.item_post_place);
+          //  count = itemView.findViewById(R.id.item_post_count);
         }
     }
 

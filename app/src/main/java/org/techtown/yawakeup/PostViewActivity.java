@@ -28,8 +28,8 @@ public class PostViewActivity extends AppCompatActivity implements View.OnClickL
         mTitle = findViewById(R.id.post_view_title);
         mDate = findViewById(R.id.post_view_date);
         mTime = findViewById(R.id.post_view_time);
-        mPlace = findViewById(R.id.post_view_place);
-        mCount = findViewById(R.id.post_view_count);
+     //   mPlace = findViewById(R.id.post_view_place);
+     //   mCount = findViewById(R.id.post_view_count);
         mContents = findViewById(R.id.post_view_contents);
 
         fab_open = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.post_fab_open);
@@ -49,8 +49,8 @@ public class PostViewActivity extends AppCompatActivity implements View.OnClickL
         mTitle.setText(intent.getStringExtra("title"));
         mDate.setText("날짜 : " + intent.getStringExtra("date"));
         mTime.setText("시간 : " + intent.getStringExtra("time"));
-        mPlace.setText("장소 : " + intent.getStringExtra("place"));
-        mCount.setText("모집인원 : " + intent.getStringExtra("count"));
+      //  mPlace.setText("장소 : " + intent.getStringExtra("place"));
+     //   mCount.setText("모집인원 : " + intent.getStringExtra("count"));
         mContents.setText("내용 : " + intent.getStringExtra("contents"));
 
     }

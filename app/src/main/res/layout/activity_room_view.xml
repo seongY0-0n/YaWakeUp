@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="15dp"
     android:orientation="vertical"
+    android:background="@color/black"
     tools:context=".PostViewActivity">
 
     <TextView
         android:id="@+id/room_view_title"
         android:layout_width="match_parent"
+        android:textColor="@color/white"
         android:layout_height="wrap_content"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -28,6 +29,7 @@
         android:id="@+id/room_view_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:layout_marginTop="15dp"
         android:textSize="20sp"
         tools:text="time" />
@@ -36,6 +38,7 @@
     <TextView
         android:id="@+id/room_view_count"
         android:layout_width="wrap_content"
+        android:textColor="@color/white"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:textSize="20sp"
@@ -44,6 +47,7 @@
     <TextView
         android:id="@+id/room_view_contents"
         android:layout_width="wrap_content"
+        android:textColor="@color/white"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:textSize="20sp"
@@ -51,6 +55,7 @@
 
     <FrameLayout
         android:layout_width="match_parent"
+
         android:layout_height="match_parent">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton

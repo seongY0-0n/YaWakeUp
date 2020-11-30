@@ -67,14 +67,14 @@ public class Share_Activity extends AppCompatActivity implements View.OnClickLis
                         intent.putExtra("title", currentPost.getTitle());
                         intent.putExtra("date", currentPost.getDate());
                         intent.putExtra("time", currentPost.getTime());
-                        intent.putExtra("place", currentPost.getPlace());
-                        intent.putExtra("count", currentPost.getCount());
+                       // intent.putExtra("place", currentPost.getPlace());
+                       // intent.putExtra("count", currentPost.getCount());
                         intent.putExtra("contents", currentPost.getContents());
 
                         startActivity(intent);
 
 
-                        Toast.makeText(Share_Activity.this, "현재 터치한 Item의 Title은 " + currentPost.getTitle(), Toast.LENGTH_SHORT).show();
+                       // Toast.makeText(Share_Activity.this, "현재 터치한 Item의 Title은 " + currentPost.getTitle(), Toast.LENGTH_SHORT).show();
                     }
 
                     return true;
@@ -117,7 +117,7 @@ public class Share_Activity extends AppCompatActivity implements View.OnClickLis
                         String place = String.valueOf(shot.get("place"));
                         String count = String.valueOf(shot.get("count"));
                         String contents = String.valueOf(shot.get("contents"));
-                        Post data = new Post(documentId, title, date, time, place, count, contents);
+                        Post data = new Post(documentId, title, date, time, contents);
                         Log.v("DATACLEAR", title);
                         mDatas.add(data);
                     }

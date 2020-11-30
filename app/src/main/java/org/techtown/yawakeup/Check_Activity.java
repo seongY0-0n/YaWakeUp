@@ -30,7 +30,7 @@ import java.util.Locale;
 
 
 public class Check_Activity extends Activity implements View.OnClickListener {
-
+    private TextView checkTotal, checkEx;
     private Button getSleepTime;
     SimpleDateFormat dayFormat;
     String minusDay, day;
@@ -40,7 +40,10 @@ public class Check_Activity extends Activity implements View.OnClickListener {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.test);
+        setContentView(R.layout.activity_check);
+
+        checkTotal = findViewById(R.id.checkTotal);
+        checkEx = findViewById(R.id.checkExt);
 
         //잠자는 시간
         getSleepTime = findViewById(R.id.setWake);
@@ -61,12 +64,28 @@ public class Check_Activity extends Activity implements View.OnClickListener {
         minusDay = dayFormat.format(new Date(before));
 
         SharedPreferences dp = getSharedPreferences("11_wake",MODE_PRIVATE); // 달 기준으로 저장
+        SharedPreferences.Editor ed = dp.edit();
+        ed.apply();
 
 
+        int sleepTotal = 0;
         for(int i = Integer.parseInt(minusDay); i <=Integer.parseInt(day); i++ ){
             String str = dp.getString(Integer.toString(i),"0");
+            sleepTotal += Integer.parseInt(str);
             mBarChart.addBar(new BarModel(i + "일",Integer.parseInt(str)/100,0xFF1FF4AC ));
         }
+
+        int howT = sleepTotal / 700;
+        Log.e("몇시간 잤니 ?", Integer.toString(howT));
+        checkTotal.setText("이번 주 평균 수면 시간은\n" +Integer.toString(howT) + "시간!");
+        if (howT < 7 ){
+            checkEx.setText("피곤한 삶을 살고 계시네요.\n잠이 부족하면 면역력이 약해지고, 몸이 망가져요.\n오늘은 일찍 자세요~");
+        } else if (howT > 7 && howT < 8 || howT == 7 || howT ==8){
+            checkEx.setText("완벽한 수면 패턴! 건강한 당신!");
+        } else if(howT >8){
+            checkEx.setText("과수면! 과수면! 과수면!\n과도한 잠은 비만과 무기력 증을 유발할 수 있습니다.\n내일은 조금 더 일찍 일어나볼까요?");
+        }
+
 
         mBarChart.startAnimation();
 

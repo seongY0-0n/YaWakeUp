@@ -11,8 +11,8 @@ public class Post {
     private String title;
     private String date;
     private String time;
-    private String place;
-    private String count;
+    //private String place;
+    //private String count;
     private String contents;
 
 
@@ -20,13 +20,12 @@ public class Post {
 
     }
 
-    public Post(String documentId, String title, String date, String time, String place, String count, String contents) {
+    public Post(String documentId, String title, String date, String time,  String contents) {
         this.documentId = documentId;
         this.title = title;
         this.date = date;
         this.time = time;
-        this.place = place;
-        this.count = count;
+
         this.contents = contents;
     }
 
@@ -46,14 +45,6 @@ public class Post {
 
     public void setTime(String time) { this.time = time; }
 
-    public String getPlace() { return place; }
-
-    public void setPlace(String place) { this.place = place; }
-
-    public String getCount() { return count; }
-
-    public void setCount(String count) { this.count = count; }
-
     public String getContents() { return contents; }
 
     public void setContents(String contents) { this.contents = contents; }
@@ -65,8 +56,6 @@ public class Post {
         result.put("title", title);
         result.put("date", date);
         result.put("time", time);
-        result.put("place", place);
-        result.put("count", count);
         result.put("contents", contents);
 
         return result;

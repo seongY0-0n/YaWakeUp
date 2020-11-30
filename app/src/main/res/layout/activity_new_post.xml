@@ -55,12 +55,6 @@
             android:text="날짜 : 2020년 10월 11일"
             android:textSize="20sp" />
 
-        <Button
-            android:id="@+id/post_date_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="날짜 선택" />
-
 
     </LinearLayout>
 
@@ -81,12 +75,6 @@
             android:textSize="20sp" />
 
 
-        <Button
-            android:id="@+id/post_time_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="시간 선택" />
-
     </LinearLayout>
 
     <!--장소 작성-->
@@ -94,44 +82,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="장소 : "
-            android:textSize="20sp" />
-
-        <EditText
-            android:id="@+id/post_place_et"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:privateImeOptions="defaultInputmode=korean"
-            android:textSize="20sp" />
-
-    </LinearLayout>
+        android:orientation="horizontal"/>
 
     <!--모집인원 작성-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="모집인원 : "
-            android:textSize="20sp" />
-
-        <EditText
-            android:id="@+id/post_count_et"
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
-            android:gravity="end"
-            android:textSize="20sp" />
-
-    </LinearLayout>
+        android:orientation="horizontal"/>
 
     <!--내용 작성-->
     <LinearLayout

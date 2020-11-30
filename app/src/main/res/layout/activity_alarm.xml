@@ -25,25 +25,19 @@
             android:textColor="@color/white"
             android:textColorHint="#FFFFFF" />
 
-        <ImageView
-            android:id="@+id/searchBtn"
-            android:layout_width="50dp"
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="15dp"
-            android:layout_marginRight="15dp"
-            android:background="#FFFFFF"
-            android:clickable="true"
-            android:padding="8dp"
-            android:src="@drawable/ic_search_white" />
+            android:layout_weight="1"
+            android:text="검색" />
 
-        <ImageView
-            android:id="@+id/postBtn"
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:background="#FFFCFC"
-            android:clickable="true"
-            android:padding="8dp"
-            android:src="@drawable/ic_write_white" />
+        <Button
+            android:id="@+id/button6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="방생성" />
 
 
     </LinearLayout>

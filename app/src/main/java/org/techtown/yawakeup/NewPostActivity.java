@@ -46,20 +46,20 @@ public class NewPostActivity extends AppCompatActivity implements View.OnClickLi
 
 
         EditText_title = findViewById(R.id.post_title_et);
-        EditText_place = findViewById(R.id.post_place_et);
-        EditText_count = findViewById(R.id.post_count_et);
+       // EditText_place = findViewById(R.id.post_place_et);
+    //    EditText_count = findViewById(R.id.post_count_et);
         EditText_contents = findViewById(R.id.post_contents_et);
 
         TextView_Date = (TextView) findViewById(R.id.post_date_tv);
         TextView_Time = (TextView) findViewById(R.id.post_time_tv);
 
-        Button post_date_btn = findViewById(R.id.post_date_btn);
-        Button post_time_btn = findViewById(R.id.post_time_btn);
+       // Button post_date_btn = findViewById(R.id.post_date_btn);
+       // Button post_time_btn = findViewById(R.id.post_time_btn);
         Button post_save_btn = findViewById(R.id.post_save_btn);
 
 
         //날짜 버튼 리스너
-        post_date_btn.setOnClickListener(new View.OnClickListener() {
+   /*     post_date_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showDate();
@@ -72,7 +72,7 @@ public class NewPostActivity extends AppCompatActivity implements View.OnClickLi
             public void onClick(View v) {
                 showTime();
             }
-        });
+        });*/
 
         post_save_btn.setOnClickListener(this);
 
@@ -131,7 +131,7 @@ public class NewPostActivity extends AppCompatActivity implements View.OnClickLi
         String count = EditText_count.getText().toString();
         String contents = EditText_contents.getText().toString();
 
-        writeNewPost("1", title, dateString, timeString, place, count, contents);
+        writeNewPost("1", title, dateString, timeString,  contents);
 
         SharedPreferences alarmSp = this.getSharedPreferences("AlarmStatus", Context.MODE_PRIVATE);
         SharedPreferences.Editor edit = alarmSp.edit();
@@ -144,10 +144,10 @@ public class NewPostActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     private void writeNewPost(String userId, String title, String date, String time,
-                              String place, String count, String contents) {
+                           String contents) {
 
         String key = mDatabase.child("posts").push().getKey();
-        Post post = new Post(userId, title, date, time, place, count, contents);
+        Post post = new Post(userId, title, date, time, contents);
 
         Map<String, Object> postValues = post.toMap();
 

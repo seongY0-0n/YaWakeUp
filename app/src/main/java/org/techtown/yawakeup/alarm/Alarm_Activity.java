@@ -96,7 +96,7 @@ public class Alarm_Activity extends Activity implements View.OnClickListener{
             }
         });
 
-        findViewById(R.id.postBtn).setOnClickListener(this);
+        findViewById(R.id.button6).setOnClickListener(this);
 
 
     }

@@ -93,10 +93,15 @@ public class MathAlarm_Activity extends AppCompatActivity {
 
 
         int t = new Random().nextInt(4);
+
         if(t==0){
+            first = (int) (Math.random()*1000);
+            second = (int) (Math.random()*1000);
             dap=plus(first,second);
             mathText.setText(first + "\n + " + second );
         }else if(t==1){
+            first = (int) (Math.random()*1000);
+            second = (int) (Math.random()*1000);
             dap=minus(first,second);
             mathText.setText(first + "\n - " + second );
         }else if(t==2){

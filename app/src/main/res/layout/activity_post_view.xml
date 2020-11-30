@@ -41,22 +41,6 @@
         tools:text="time" />
 
     <TextView
-        android:id="@+id/post_view_place"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:textSize="20sp"
-        tools:text="place" />
-
-    <TextView
-        android:id="@+id/post_view_count"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:textSize="20sp"
-        tools:text="count" />
-
-    <TextView
         android:id="@+id/post_view_contents"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
